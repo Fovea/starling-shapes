@@ -1,39 +1,38 @@
 // =================================================================================================
 //
-//	Starling Framework
-//	Copyright 2011-2014 Gamua. All Rights Reserved.
+//	Starling Shapes
+//	Copyright 2014 Fovea. All Rights Reserved.
 //
 //	This program is free software. You can redistribute and/or modify it
 //	in accordance with the terms of the accompanying license agreement.
 //
 // =================================================================================================
-
-package gamebase.hexaboard
+package starling.display
 {
     import flash.geom.Matrix;
     import flash.geom.Matrix3D;
     import flash.geom.Point;
     import flash.geom.Rectangle;
     import flash.geom.Vector3D;
-    
+
     import starling.core.RenderSupport;
     import starling.utils.VertexData;
     import starling.display.Quad;
-    
+
     /** A Poly4 represents an abitrary quad with a uniform color or a color gradient.
-     *  
+     *
      *  <p>You can set one color per vertex. The colors will smoothly fade into each other over the area
      *  of the quad. To display a simple linear color gradient, assign one color to vertices 0 and 1 and 
-     *  another color to vertices 2 and 3. </p> 
+     *  another color to vertices 2 and 3. </p>
      *
      *  <p>The indices of the vertices are arranged like this:</p>
-     *  
+     *
      *  <pre>
      *  0 - 1
      *  | / |
      *  2 - 3
      *  </pre>
-     * 
+     *
      *  @see Image
      */
     public class Poly4 extends Quad

@@ -1,6 +1,25 @@
-package gamebase.hexaboard
+// =================================================================================================
+//
+//	Starling Shapes
+//	Copyright 2014 Fovea. All Rights Reserved.
+//
+//	This program is free software. You can redistribute and/or modify it
+//	in accordance with the terms of the accompanying license agreement.
+//
+// =================================================================================================
+
+package starling.display
 {
     import flash.geom.Point;
+
+    /** A Line represents a segment with a thickness and uniform color or a color gradient.
+     *
+     * <p>It inherit from the Poly4 class which means you can setup per-vertex color.
+     * The first two points of the Poly4 are those associated with the `from` point of the Line.
+     * The last two points are associated with the `to` point of the Line.</p>
+     *
+     *  @see Poly4
+     */
     public class Line extends Poly4 {
         public function Line(from:Point, to:Point, thickness:Number, color:uint, premultipliedAlpha:Boolean = true) {
             var dx:Number = to.x - from.x;
