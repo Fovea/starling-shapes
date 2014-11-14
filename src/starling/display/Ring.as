@@ -29,9 +29,7 @@ package starling.display
             var c1:Point = new Point();
             var p0:Point = new Point();
             var p1:Point = new Point();
-
             var nParts:int = Math.max(Math.round(outerRadius * 1.0), 8);
-            var c:Point = new Point(outerRadius, outerRadius);
             var angle:Number = 0;
             for (var i:int = 0; i <= nParts; ++i) {
                 var a0:Number = (i + 0.0) * 2.0 * Math.PI / nParts;
