@@ -23,8 +23,15 @@ package starling.display
     /** A Disk represents a circle filled with a uniform color. */
     public class Ring extends Sprite
     {
+        private var _innerRadius:Number;
+        private var _outerRadius:Number;
+        private var _outerRadius2:Number;
+
         public function Ring(innerRadius:Number, outerRadius:Number, color:uint=0xffffff, premultipliedAlpha:Boolean=true)
         {
+            _innerRadius = innerRadius;
+            _outerRadius = outerRadius;
+            _outerRadius2 = outerRadius * outerRadius;
             var c0:Point = new Point();
             var c1:Point = new Point();
             var p0:Point = new Point();
@@ -49,6 +56,15 @@ package starling.display
                 var q:Poly4 = new Poly4(c0, p0, c1, p1, color, premultipliedAlpha);
                 addChild(q);
             }
+        }
+
+        public override function hitTest(localPoint:Point, forTouch:Boolean = false):DisplayObject {
+            // on a touch test, invisible or untouchable objects cause the test to fail
+            if (forTouch && (!visible || !touchable)) return null;
+            var vx:Number = localPoint.x - _outerRadius;
+            var vy:Number = localPoint.y - _outerRadius;
+            var l2:Number = vx*vx + vy*vy;
+            return (l2 < _outerRadius2) ? this : null;
         }
     }
 }
