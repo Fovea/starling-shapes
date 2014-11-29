@@ -27,6 +27,9 @@ package starling.display
         private var _outerRadius:Number;
         private var _outerRadius2:Number;
 
+        public function get innerRadius():Number { return _innerRadius; }
+        public function get outerRadius():Number { return _outerRadius; }
+
         public function Ring(innerRadius:Number, outerRadius:Number, color:uint=0xffffff, premultipliedAlpha:Boolean=true)
         {
             _innerRadius = innerRadius;
