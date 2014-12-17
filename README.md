@@ -1,7 +1,9 @@
 Starling Shapes
 ===============
 
-(c)2014, Fovea
+(c)2014, [Fovea](http://fovea.cc)
+
+This extension was developed for the game [Shyring](http://fovea.cc/shyring). [See it in action](http://fovea.cc/shyring)!
 
 Why?
 ----
