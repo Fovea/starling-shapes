@@ -15,8 +15,6 @@ package starling.display
     import flash.geom.Rectangle;
     import flash.geom.Vector3D;
 
-    import starling.core.RenderSupport;
-    import starling.utils.VertexData;
     import starling.display.Quad;
 
     /** A Poly4 represents an abitrary quad with a uniform color or a color gradient.
@@ -39,18 +37,17 @@ package starling.display
     {
         private var _lowerRight:Point;
 
-        public function Poly4(p1:Point, p2:Point, p3:Point, p4:Point, color:uint=0xffffff, premultipliedAlpha:Boolean=true)
+        public function Poly4(p1:Point, p2:Point, p3:Point, p4:Point, color:uint=0xffffff)
         {
             var xmin:Number = Math.min(p1.x,p2.x,p3.x,p4.x);
             var ymin:Number = Math.min(p1.y,p2.y,p3.y,p4.y);
             var xmax:Number = Math.max(p1.x,p2.x,p3.x,p4.x);
             var ymax:Number = Math.max(p1.y,p2.y,p3.y,p4.y);
-            super(xmax-xmin,ymax-ymin,color,premultipliedAlpha);
-            mVertexData.setPosition(0, p1.x - xmin, p1.y - ymin);
-            mVertexData.setPosition(1, p2.x - xmin, p2.y - ymin);
-            mVertexData.setPosition(2, p3.x - xmin, p3.y - ymin);
-            mVertexData.setPosition(3, p4.x - xmin, p4.y - ymin);
-            onVertexDataChanged();
+            super(xmax-xmin,ymax-ymin,color);
+            vertexData.setPoint(0, 'position', p1.x - xmin, p1.y - ymin);
+            vertexData.setPoint(1, 'position', p2.x - xmin, p2.y - ymin);
+            vertexData.setPoint(2, 'position', p3.x - xmin, p3.y - ymin);
+            vertexData.setPoint(3, 'position', p4.x - xmin, p4.y - ymin);
             x = xmin;
             y = ymin;
             _lowerRight = new Point(xmax - xmin, ymax - ymin);
