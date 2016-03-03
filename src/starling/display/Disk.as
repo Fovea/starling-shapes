@@ -12,9 +12,9 @@ package starling.display
     /** A Disk represents a circle filled with a uniform color. */
     public class Disk extends Ring
     {
-        public function Disk(radius:Number, color:uint=0xffffff, premultipliedAlpha:Boolean=true)
+        public function Disk(radius:Number, color:uint=0xffffff)
         {
-            super(0, radius, color, premultipliedAlpha);
+            super(0, radius, color);
         }
     }
 }

@@ -15,8 +15,6 @@ package starling.display
     import flash.geom.Rectangle;
     import flash.geom.Vector3D;
 
-    import starling.core.RenderSupport;
-    import starling.utils.VertexData;
     import starling.display.Sprite;
     import starling.display.Quad;
 
@@ -31,7 +29,7 @@ package starling.display
         public function get innerRadius():Number { return _innerRadius; }
         public function get outerRadius():Number { return _outerRadius; }
 
-        public function Ring(innerRadius:Number, outerRadius:Number, color:uint=0xffffff, premultipliedAlpha:Boolean=true)
+        public function Ring(innerRadius:Number, outerRadius:Number, color:uint=0xffffff)
         {
             _polygons = new Vector.<Poly4>;
             _innerRadius = innerRadius;
@@ -58,7 +56,8 @@ package starling.display
                 p0.y = outerRadius + sa0 * outerRadius;
                 p1.x = outerRadius + ca1 * outerRadius;
                 p1.y = outerRadius + sa1 * outerRadius;
-                var q:Poly4 = new Poly4(c0, p0, c1, p1, color, premultipliedAlpha);
+                var q:Poly4 = new Poly4(c0, p0, c1, p1, color);
+                    q.pixelSnapping = false;
                 _polygons.push(q);
                 addChild(q);
             }
@@ -70,9 +69,9 @@ package starling.display
             }
         }
 
-        public override function hitTest(localPoint:Point, forTouch:Boolean = false):DisplayObject {
+        public override function hitTest(localPoint:Point):DisplayObject {
             // on a touch test, invisible or untouchable objects cause the test to fail
-            if (forTouch && (!visible || !touchable)) return null;
+            if (!visible || !touchable) return null;
             var vx:Number = localPoint.x - _outerRadius;
             var vy:Number = localPoint.y - _outerRadius;
             var l2:Number = vx*vx + vy*vy;

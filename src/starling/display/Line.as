@@ -21,7 +21,7 @@ package starling.display
      *  @see Poly4
      */
     public class Line extends Poly4 {
-        public function Line(from:Point, to:Point, thickness:Number, color:uint, premultipliedAlpha:Boolean = true) {
+        public function Line(from:Point, to:Point, thickness:Number, color:uint) {
             var dx:Number = to.x - from.x;
             var dy:Number = to.y - from.y;
             var l:Number = Math.sqrt(dx*dx + dy*dy);
@@ -45,7 +45,7 @@ package starling.display
             p4.offset(-v.x * halfT, -v.y * halfT);
             p4.offset(u.x * halfT, u.y * halfT);
 
-            super(p1, p2, p3, p4, color, premultipliedAlpha);
+            super(p1, p2, p3, p4, color);
         }
     }
 }
