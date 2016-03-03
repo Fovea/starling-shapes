@@ -20,6 +20,8 @@ So in short, this extension has less features, but is compatible with `flatten`,
 
 If all you need are Lines, Circles and custom Polygons, then do not look any further.
 
+Note** v2 utilizes the Starling 2 library and flatten has been removed.
+
 Shapes
 ------
 
@@ -28,7 +30,11 @@ Shapes
 A Poly4 represents an abitrary 4-sided polygon with a uniform color or a color gradient.
 
 ```as3
+v1
 Poly4(p1:Point, p2:Point, p3:Point, p4:Point, color:uint=0xffffff, premultipliedAlpha:Boolean=true)
+
+v2
+Poly4(p1:Point, p2:Point, p3:Point, p4:Point, color:uint=0xffffff)
 ```
 
 It inherits directly from starling.display.Quad, so all fancy coloring options of Quads can be used with Poly4.
@@ -41,7 +47,11 @@ A Ring represents a ring (what else?), see [this image](http://sugabetic.files.w
 
 constructor:
 ```as3
+v1
 Ring(innerRadius:Number, outerRadius:Number, color:uint=0xffffff, premultipliedAlpha:Boolean=true)
+
+v2
+Ring(innerRadius:Number, outerRadius:Number, color:uint=0xffffff)
 ```
 
 It's built using a set of polygons. Number of vertices is relative to the outer radius.
@@ -54,7 +64,11 @@ A Disk is like a ring but without a hole in the middle.
 
 constructor:
 ```as3
+v1
 Disk(radius:Number, color:uint=0xffffff, premultipliedAlpha:Boolean=true)
+
+v2
+Disk(radius:Number, color:uint=0xffffff)
 ```
 
 It's actually a ring with innerRadius set to 0.
@@ -67,7 +81,11 @@ A Line represents a segment with a thickness and uniform color or a color gradie
 
 constructor:
 ```as3
-Line(from:Point, to:Point, thickness:Number, color:uint, premultipliedAlpha:Boolean = true) {
+v1
+Line(from:Point, to:Point, thickness:Number, color:uint, premultipliedAlpha:Boolean = true)
+
+v2
+Line(from:Point, to:Point, thickness:Number, color:uint)
 ```
 
 It inherit from the Poly4 class which means you can setup per-vertex color.
