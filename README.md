@@ -5,6 +5,9 @@ Starling Shapes
 
 This extension was developed for the game [Shyring](http://fovea.cc/shyring). [See it in action](http://fovea.cc/shyring)!
 
+ * Starling v1 users should use the [v1 branch](https://github.com/Fovea/starling-shapes/tree/v1).
+ * Starling v2 users should use the [v2 branch](https://github.com/Fovea/starling-shapes/tree/v2).
+
 Why?
 ----
 
