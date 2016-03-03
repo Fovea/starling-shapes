@@ -31,10 +31,6 @@ Shapes
 A Poly4 represents an abitrary 4-sided polygon with a uniform color or a color gradient.
 
 ```as3
-v1
-Poly4(p1:Point, p2:Point, p3:Point, p4:Point, color:uint=0xffffff, premultipliedAlpha:Boolean=true)
-
-v2
 Poly4(p1:Point, p2:Point, p3:Point, p4:Point, color:uint=0xffffff)
 ```
 
@@ -48,10 +44,6 @@ A Ring represents a ring (what else?), see [this image](http://sugabetic.files.w
 
 constructor:
 ```as3
-v1
-Ring(innerRadius:Number, outerRadius:Number, color:uint=0xffffff, premultipliedAlpha:Boolean=true)
-
-v2
 Ring(innerRadius:Number, outerRadius:Number, color:uint=0xffffff)
 ```
 
@@ -65,10 +57,6 @@ A Disk is like a ring but without a hole in the middle.
 
 constructor:
 ```as3
-v1
-Disk(radius:Number, color:uint=0xffffff, premultipliedAlpha:Boolean=true)
-
-v2
 Disk(radius:Number, color:uint=0xffffff)
 ```
 
@@ -82,10 +70,6 @@ A Line represents a segment with a thickness and uniform color or a color gradie
 
 constructor:
 ```as3
-v1
-Line(from:Point, to:Point, thickness:Number, color:uint, premultipliedAlpha:Boolean = true)
-
-v2
 Line(from:Point, to:Point, thickness:Number, color:uint)
 ```
 
