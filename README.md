@@ -18,9 +18,10 @@ in poor performances, especially if you have complex static objects that could h
 
 So in short, this extension has less features, but is compatible with `flatten`, which will help you write more efficient code.
 
+Note** v2 `flatten` has been removed by the Starling 2 library
+
 If all you need are Lines, Circles and custom Polygons, then do not look any further.
 
-Note** v2 utilizes the Starling 2 library and flatten has been removed.
 
 Shapes
 ------
