@@ -13,12 +13,9 @@ Why?
 
 Why another extension, when there's already the [Starling Graphics Extension](https://github.com/StarlingGraphics/Starling-Extension-Graphics)?
 
-Well, one draw-back of the Graphics extension is that it doesn't allow to `flatten` your sprites. Which will result
-in poor performances, especially if you have complex static objects that could have been pre-rendered.
+The original functionality of these classes was to avoid the draw-back of the Graphics extension not allowing you to `flatten` your sprites. Which resulted in poor performances, especially if you have complex static objects that could have been pre-rendered.
 
-So in short, this extension has less features, but is compatible with `flatten`, which will help you write more efficient code.
-
-Note** v2 `flatten` has been removed by the Starling 2 library
+In Starling 2 `flatten` has been removed. Starling developers have noted the `flatten` feature might come back in the future.
 
 If all you need are Lines, Circles and custom Polygons, then do not look any further.
 
