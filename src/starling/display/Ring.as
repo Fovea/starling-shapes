@@ -9,18 +9,12 @@
 // =================================================================================================
 package starling.display
 {
-    import flash.geom.Matrix;
-    import flash.geom.Matrix3D;
     import flash.geom.Point;
-    import flash.geom.Rectangle;
-    import flash.geom.Vector3D;
-
-    import starling.core.RenderSupport;
-    import starling.utils.VertexData;
     import starling.display.Sprite;
-    import starling.display.Quad;
 
-    /** A Disk represents a circle filled with a uniform color. */
+    /** A Disk represents a circle filled with a uniform color.
+     * 
+     * TODO: Reimplement using Mesh */
     public class Ring extends Sprite
     {
         private var _innerRadius:Number;
@@ -70,9 +64,10 @@ package starling.display
             }
         }
 
-        public override function hitTest(localPoint:Point, forTouch:Boolean = false):DisplayObject {
-            // on a touch test, invisible or untouchable objects cause the test to fail
-            if (forTouch && (!visible || !touchable)) return null;
+        /** @inheritDoc */
+        override public function hitTest(localPoint:Point):DisplayObject
+        {
+            if (!visible || !touchable || !hitTestMask(localPoint)) return null;
             var vx:Number = localPoint.x - _outerRadius;
             var vy:Number = localPoint.y - _outerRadius;
             var l2:Number = vx*vx + vy*vy;
