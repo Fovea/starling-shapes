@@ -13,12 +13,12 @@ Why?
 
 Why another extension, when there's already the [Starling Graphics Extension](https://github.com/StarlingGraphics/Starling-Extension-Graphics)?
 
-Well, one draw-back of the Graphics extension is that it doesn't allow to `flatten` your sprites. Which will result
-in poor performances, especially if you have complex static objects that could have been pre-rendered.
+The original functionality of these classes was to avoid the draw-back of the Graphics extension not allowing you to `flatten` your sprites. Which resulted in poor performances, especially if you have complex static objects that could have been pre-rendered.
 
-So in short, this extension has less features, but is compatible with `flatten`, which will help you write more efficient code.
+In Starling 2 `flatten` has been removed. Starling developers have noted the `flatten` feature might come back in the future.
 
 If all you need are Lines, Circles and custom Polygons, then do not look any further.
+
 
 Shapes
 ------
@@ -28,7 +28,7 @@ Shapes
 A Poly4 represents an abitrary 4-sided polygon with a uniform color or a color gradient.
 
 ```as3
-Poly4(p1:Point, p2:Point, p3:Point, p4:Point, color:uint=0xffffff, premultipliedAlpha:Boolean=true)
+Poly4(p1:Point, p2:Point, p3:Point, p4:Point, color:uint=0xffffff)
 ```
 
 It inherits directly from starling.display.Quad, so all fancy coloring options of Quads can be used with Poly4.
@@ -41,7 +41,7 @@ A Ring represents a ring (what else?), see [this image](http://sugabetic.files.w
 
 constructor:
 ```as3
-Ring(innerRadius:Number, outerRadius:Number, color:uint=0xffffff, premultipliedAlpha:Boolean=true)
+Ring(innerRadius:Number, outerRadius:Number, color:uint=0xffffff)
 ```
 
 It's built using a set of polygons. Number of vertices is relative to the outer radius.
@@ -54,7 +54,7 @@ A Disk is like a ring but without a hole in the middle.
 
 constructor:
 ```as3
-Disk(radius:Number, color:uint=0xffffff, premultipliedAlpha:Boolean=true)
+Disk(radius:Number, color:uint=0xffffff)
 ```
 
 It's actually a ring with innerRadius set to 0.
@@ -67,7 +67,7 @@ A Line represents a segment with a thickness and uniform color or a color gradie
 
 constructor:
 ```as3
-Line(from:Point, to:Point, thickness:Number, color:uint, premultipliedAlpha:Boolean = true) {
+Line(from:Point, to:Point, thickness:Number, color:uint)
 ```
 
 It inherit from the Poly4 class which means you can setup per-vertex color.
