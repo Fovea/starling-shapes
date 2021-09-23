@@ -1,0 +1,17 @@
+{
+    "id": "starling.shapes",
+    "name": "Starling Shapes",
+    "url": "https://github.com/Fovea/starling-shapes",
+    "docUrl": "https://github.com/Fovea/starling-shapes",
+    "description": "Vector shapes for starling",
+    "sourceUrl": "https://github.com/Fovea/starling-shapes/releases/download/v2.6.0/starling.shapes_2.6.0.airpackage",
+    "type": "src",
+    "version":"2.6.0",
+    "license": {
+        "type": "BSD",
+        "public": true
+    },
+    "dependencies": [],
+    "parameters": [],
+    "tags": [ "starling", "extension", "shapes", "graphics" ]
+}
